@@ -1,0 +1,25 @@
+﻿@model ProjeCore.Models.Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>YeniPersonel</h1>
+
+<br/>
+<form class="form-group" method="post">
+    
+    @Html.LabelFor(x=>x.Ad) 
+    @Html.TextBoxFor(x=>x.Ad, new {@class="form-control"})
+    @Html.LabelFor(x=>x.Soyad) 
+    @Html.TextBoxFor(x=>x.Soyad, new {@class="form-control"})
+    @Html.LabelFor(x=>x.Sehir) 
+    @Html.TextBoxFor(x=>x.Sehir ,new {@class="form-control"})
+    @Html.LabelFor(x=>x.Birim) 
+   @Html.DropDownListFor(x=>x.Birim.BirimId,(List<SelectListItem>)ViewBag.dgr,new
+   {
+       @class="form-control"
+   })
+    <br/>
+    <button class="btn btn-info">Birim Ekle</button>
+</form>
